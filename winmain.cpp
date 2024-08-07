@@ -1,7 +1,7 @@
 #include <Windows.h>
 #include "VirtualVideo.h"
 
-D2DFramework myFramework;
+VirtualVideo myFramework;
 
 int WINAPI WinMain(
 	_In_ HINSTANCE hInstance,

@@ -17,18 +17,18 @@ HRESULT D2DFramework::Init(HINSTANCE hInstance, LPCWSTR title, UINT width, UINT 
 
 void D2DFramework::Release()
 {
-	mpRenderTarget.Reset();
+	mspRenderTarget.Reset();
 	mpD2dFactory.Reset();
 }
 
 void D2DFramework::Render()
 {
 	// 3. ±×¸®±â
-	mpRenderTarget->BeginDraw();
+	mspRenderTarget->BeginDraw();
 
-	mpRenderTarget->Clear(D2D1::ColorF(0.0f, 0.2f, 0.4f, 1.0f));
+	mspRenderTarget->Clear(D2D1::ColorF(0.0f, 0.2f, 0.4f, 1.0f));
 
-	HRESULT hr = mpRenderTarget->EndDraw();
+	HRESULT hr = mspRenderTarget->EndDraw();
 	if (hr == D2DERR_RECREATE_TARGET) 
 	{
 		CreateDeviceResources();
@@ -144,7 +144,7 @@ HRESULT D2DFramework::CreateDeviceResources()
 	HRESULT hr = mpD2dFactory->CreateHwndRenderTarget(
 		D2D1::RenderTargetProperties(),
 		D2D1::HwndRenderTargetProperties(mHwnd, D2D1::SizeU(wr.right - wr.left, wr.bottom - wr.top)),
-		&mpRenderTarget
+		&mspRenderTarget
 	);
 	ThrowIfFailed(hr);
 

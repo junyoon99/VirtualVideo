@@ -17,5 +17,14 @@ public:
 		LPCWSTR title = L"D2DFramework",
 		UINT width = 1024, UINT height = 768) override;
 	void Render() override;
+
+	void Present();
+
+	void DrawPixelToBuffer(int x, int y, D2D1::ColorF color);
+	void ClearBuffer(D2D1::ColorF color);
+
+	void FillRectToBuffer(int left, int top, int width, int height, D2D1::ColorF color);
+	void LineToBuffer(int x1, int y1, int x2, int y2, D2D1::ColorF color);
+	void CircleToBuffer(int centerX, int centerY, int radius, D2D1::ColorF color);
 };
 

@@ -41,7 +41,7 @@ UINT width = 1024, UINT height = 768);
 protected:
 	Microsoft::WRL::ComPtr<ID2D1Factory> mpD2dFactory{};
 
-	Microsoft::WRL::ComPtr<ID2D1HwndRenderTarget> mpRenderTarget{};
+	Microsoft::WRL::ComPtr<ID2D1HwndRenderTarget> mspRenderTarget{};
 
 	HRESULT InitWindow(HINSTANCE hInstance, LPCWSTR title, UINT width, UINT height);
 	HRESULT InitD2D();
